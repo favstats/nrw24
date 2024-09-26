@@ -224,12 +224,12 @@ dir("_site", full.names = T) %>% keep(~str_detect(.x, "qmd")) %>% keep(~str_dete
 #   })
 # 
 # if (Sys.info()[["effective_user"]] == "fabio" | Sys.info()[["effective_user"]] == "favoo") {
-#   # system("git pull")
-#   gert::git_pull()
-#   # system("git add -A")
-#   # system('git commit -m "update"')
-#   # system("git push")
-#   gert::git_add(".")
-#   gert::git_commit("update")
-#   gert::git_push()
+  # system("git pull")
+  # gert::git_pull()
+  # # system("git add -A")
+  # # system('git commit -m "update"')
+  # # system("git push")
+  # gert::git_add(".")
+  # gert::git_commit("update")
+  # gert::git_push()
 # }
