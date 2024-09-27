@@ -388,13 +388,13 @@ election_dat30 <- readRDS("../data/election_dat30.rds")  %>%
   filter(is.na(no_data)) %>% 
   drop_na(party) %>% 
   mutate(internal_id = page_id) %>% 
-  mutate(party %in% c("And", "Reg", "Oth"))
+  mutate(!(party %in% c("And", "Reg", "Oth")))
 election_dat7 <- readRDS("../data/election_dat7.rds")  %>% 
   as_tibble() %>% 
   filter(is.na(no_data))  %>% 
   drop_na(party) %>% 
   mutate(internal_id = page_id)  %>% 
-  mutate(party %in% c("And", "Reg", "Oth"))
+  mutate(!(party %in% c("And", "Reg", "Oth")))
 currency_symbol <- "€"
 
 color_dat <- election_dat30 %>% 
