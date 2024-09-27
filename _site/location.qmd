@@ -81,15 +81,55 @@ region_dat <- election_dat30 %>%
   rename(region = value) %>%
   mutate(region = str_remove_all(region, ", Austria"))
 
+
+# region_dat %>% count(party)
+
 the_colors <- region_dat %>%
-  group_by(party) %>%
-  summarize(total_spend_formatted = sum(total_spend_formatted)) %>%
-  ungroup() %>%
-  mutate(party = fct_relevel(party)) %>%
+  # group_by(party) %>%
+  # summarize(total_spend_formatted = sum(total_spend_formatted)) %>%
+  # ungroup() %>%
+  # mutate(party = fct_reorder(party, total_spend_formatted)) %>%
   left_join(color_dat) %>%
+  mutate(party = ifelse(party == "ÖVP", "OVP", party)) %>% 
   arrange(party) %>%
+  distinct(party, .keep_all = T) %>% 
   drop_na(colors) %>%
+  mutate(party = ifelse(party == "OVP", "ÖVP", party)) %>% 
   pull(colors)
+
+#   party colors
+#   <chr> <chr>
+# 1 FPÖ   "#0056A2"
+# 2 KPÖ   "#AA0000"
+# 3 ÖVP   "#63C3D0"
+# 4 GRÜNE "#88B626"
+# 5 SPÖ   "#ce000c"
+# 6 NEOS  "#CB1667"
+# 7 MFG   "#d32630"
+# 
+# the_colors <- c("#63C3D0",
+#   "#ce000c",
+#   "#CB1667",
+#   "#d32630",
+#   "#AA0000",
+#   "#88B626",
+#   "#0056A2")
+# 
+# the_colors <- c("#0056A2",
+#   "#88B626", 
+#   "#AA0000",
+#   "#d32630", 
+#   "#CB1667", 
+#   "#63C3D0",
+#   "#ce000c")
+# region_dat %>% count(party)
+# 1 FPÖ   "#0056A2"
+# 4 GRÜNE "#88B626"
+# 2 KPÖ   "#AA0000"
+# 7 MFG   "#d32630"
+# 6 NEOS  "#CB1667"
+# 3 ÖVP   "#63C3D0"
+# 5 SPÖ   "#ce000c"
 
 if(nrow(region_dat)!=0) {
   # Static version
@@ -182,13 +222,16 @@ region_dat <- election_dat30 %>%
   mutate(region = str_remove_all(region, ", Austria"))
 
 the_colors <- region_dat %>%
-  group_by(party) %>%
-  summarize(total_spend_formatted = sum(total_spend_formatted)) %>%
-  ungroup() %>%
-  mutate(party = fct_relevel(party)) %>%
+  # group_by(party) %>%
+  # summarize(total_spend_formatted = sum(total_spend_formatted)) %>%
+  # ungroup() %>%
+  # mutate(party = fct_reorder(party, total_spend_formatted)) %>%
   left_join(color_dat) %>%
+  mutate(party = ifelse(party == "ÖVP", "OVP", party)) %>% 
   arrange(party) %>%
+  distinct(party, .keep_all = T) %>% 
   drop_na(colors) %>%
+  mutate(party = ifelse(party == "OVP", "ÖVP", party)) %>% 
   pull(colors)
 
 if(nrow(region_dat)!=0) {
@@ -265,13 +308,16 @@ region_dat <- election_dat30 %>%
   mutate(region = str_remove_all(region, ", Austria"))
 
 the_colors <- region_dat %>%
-  group_by(party) %>%
-  summarize(total_spend_formatted = sum(total_spend_formatted)) %>%
-  ungroup() %>%
-  mutate(party = fct_relevel(party)) %>%
+  # group_by(party) %>%
+  # summarize(total_spend_formatted = sum(total_spend_formatted)) %>%
+  # ungroup() %>%
+  # mutate(party = fct_reorder(party, total_spend_formatted)) %>%
   left_join(color_dat) %>%
+  mutate(party = ifelse(party == "ÖVP", "OVP", party)) %>% 
   arrange(party) %>%
+  distinct(party, .keep_all = T) %>% 
   drop_na(colors) %>%
+  mutate(party = ifelse(party == "OVP", "ÖVP", party)) %>% 
   pull(colors)
 
 if(nrow(region_dat)!=0) {
@@ -326,13 +372,16 @@ region_dat <- election_dat30 %>%
   mutate(region = str_remove_all(region, ", Austria"))
 
 the_colors <- region_dat %>%
-  group_by(party) %>%
-  summarize(total_spend_formatted = sum(total_spend_formatted)) %>%
-  ungroup() %>%
-  mutate(party = fct_relevel(party)) %>%
+  # group_by(party) %>%
+  # summarize(total_spend_formatted = sum(total_spend_formatted)) %>%
+  # ungroup() %>%
+  # mutate(party = fct_reorder(party, total_spend_formatted)) %>%
   left_join(color_dat) %>%
+  mutate(party = ifelse(party == "ÖVP", "OVP", party)) %>% 
   arrange(party) %>%
+  distinct(party, .keep_all = T) %>% 
   drop_na(colors) %>%
+  mutate(party = ifelse(party == "OVP", "ÖVP", party)) %>% 
   pull(colors)
 
 if(nrow(region_dat)!=0) {
