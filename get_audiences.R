@@ -312,7 +312,8 @@ us_markers <- fin %>%
   ungroup()
 
 
-mark_list <- us_markers %>% 
+mark_list <- us_markers %>%
+  mutate(ds = "2024-09-30") %>% 
   mutate(tframe = fct_relevel(tframe, c("last_7_days",
                                         "last_30_days",
                                         "last_90_days"))) %>% 

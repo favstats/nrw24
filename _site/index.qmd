@@ -46,6 +46,13 @@ total_spend_id <- election_dat30 %>%
   summarize(total_spend_formatted = sum(total_spend_formatted)) %>%
   ungroup()
 
+
+# election_dat30 %>% 
+#   filter(party == "ÖVP") %>%
+#   filter(value == "Customer list Custom Audience") %>% 
+#   arrange(desc(total_spend_formatted)) %>% 
+#   filter(num_ads != 0)
+#   count(type)
 ```
 
 
